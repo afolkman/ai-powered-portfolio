@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Welcome to the client-side repository of my interactive developer portfolio. This frontend is built using Next.js (App Router), strictly typed with TypeScript, and styled using Tailwind CSS. It serves as the primary user interface, featuring a custom chat client designed to consume my Python/FastAPI microservice. By keeping this presentation layer completely decoupled from the backend AI logic, the application remains fast, scalable, and easy to maintain.
 
 ## Getting Started
 
@@ -22,7 +22,7 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
