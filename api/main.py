@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from google import genai
 
 # Load environment variables
-load_dotenv()
+api_key = os.getenv("GEMINI_API_KEY")
 
 # Initialize the Gemini Client
 client = genai.Client()
