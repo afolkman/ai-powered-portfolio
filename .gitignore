@@ -1,26 +1,33 @@
-# Top-level files
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Mac System Files
+.DS_Store
+
+# Repo-wide
+.env*
+
+# Common generated files
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.coverage
+htmlcov/
+*.log
+__pycache__/
+*.py[cod]
+
+# Tool-specific leftovers
+.idea/
 .vscode/
+*.code-workspace
 
-# API
-## Environments
-/api/.venv/
-/api/venv/
-/api/env/
+# Environments
+.venv/
+venv/
+env/
 
-## Environment Variables (Secrets!)
-/api/.env
-
-## Python Cache
-/api/__pycache__/
-/api/*.pyc
-
-## Mac System Files
-/api/.DS_Store
-
-# Web
-
-## dependencies
+# Web dependencies
 /web/node_modules
 /web/.pnp
 /web/.pnp.*
@@ -30,38 +37,28 @@
 /web/!.yarn/releases
 /web/!.yarn/versions
 
-## testing
+# testing
 /web/coverage
 
-## next.js
+# next.js
 /web/.next/
 /web/out/
 
-## production
+# production
 /web/build
 
-## misc
-/web/.DS_Store
+# misc
 /web/*.pem
 
-## debug
+# debug
 /web/npm-debug.log*
 /web/yarn-debug.log*
 /web/yarn-error.log*
 /web/.pnpm-debug.log*
 
-## env files (can opt-in for committing if needed)
-/web/.env*
-
-## vercel
+# vercel
 /web/.vercel
 
-## typescript
+# typescript
 /web/*.tsbuildinfo
 /web/next-env.d.ts
-
-## Editor directories and files
-/web/.vscode/
-/web/*.code-workspace
-/web/.idea/
-/web/.DS_Store
