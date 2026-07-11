@@ -8,9 +8,11 @@ from google import genai
 # Load environment variables
 load_dotenv()
 api_key = os.getenv("GEMINI_API_KEY")
+if not api_key:
+    raise ValueError("GEMINI_API_KEY is not set")
 
 # Initialize the Gemini Client
-client = genai.Client()
+client = genai.Client(api_key=api_key)
 
 # Initialize the FastAPI app
 app = FastAPI(
