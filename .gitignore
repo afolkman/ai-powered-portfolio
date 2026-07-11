@@ -2,66 +2,66 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 .vscode/
 
-# Backend
+# API
 ## Environments
-/backend/.venv/
-/backend/venv/
-/backend/env/
+/api/.venv/
+/api/venv/
+/api/env/
 
 ## Environment Variables (Secrets!)
-/backend/.env
+/api/.env
 
 ## Python Cache
-/backend/__pycache__/
-/backend/*.pyc
+/api/__pycache__/
+/api/*.pyc
 
 ## Mac System Files
-/backend/.DS_Store
+/api/.DS_Store
 
-# Frontend
+# Web
 
 ## dependencies
-/frontend/node_modules
-/frontend/.pnp
-/frontend/.pnp.*
-/frontend/.yarn/*
-/frontend/!.yarn/patches
-/frontend/!.yarn/plugins
-/frontend/!.yarn/releases
-/frontend/!.yarn/versions
+/web/node_modules
+/web/.pnp
+/web/.pnp.*
+/web/.yarn/*
+/web/!.yarn/patches
+/web/!.yarn/plugins
+/web/!.yarn/releases
+/web/!.yarn/versions
 
 ## testing
-/frontend/coverage
+/web/coverage
 
 ## next.js
-/frontend/.next/
-/frontend/out/
+/web/.next/
+/web/out/
 
 ## production
-/frontend/build
+/web/build
 
 ## misc
-/frontend/.DS_Store
-/frontend/*.pem
+/web/.DS_Store
+/web/*.pem
 
 ## debug
-/frontend/npm-debug.log*
-/frontend/yarn-debug.log*
-/frontend/yarn-error.log*
-/frontend/.pnpm-debug.log*
+/web/npm-debug.log*
+/web/yarn-debug.log*
+/web/yarn-error.log*
+/web/.pnpm-debug.log*
 
 ## env files (can opt-in for committing if needed)
-/frontend/.env*
+/web/.env*
 
 ## vercel
-/frontend/.vercel
+/web/.vercel
 
 ## typescript
-/frontend/*.tsbuildinfo
-/frontend/next-env.d.ts
+/web/*.tsbuildinfo
+/web/next-env.d.ts
 
 ## Editor directories and files
-/frontend/.vscode/
-/frontend/*.code-workspace
-/frontend/.idea/
-/frontend/.DS_Store
+/web/.vscode/
+/web/*.code-workspace
+/web/.idea/
+/web/.DS_Store
