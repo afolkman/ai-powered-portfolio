@@ -20,7 +20,8 @@ app = FastAPI(
     description="FastAPI backend powering my AI chatbot."
 )
 
-allowed_origins_str = os.getenv("ALLOWED_ORIGINS", "")
+# Get allowed origins from environment variable, fallback to localhost:3000 if not set
+allowed_origins_str = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000")
 allowed_origins_list = [origin.strip() for origin in allowed_origins_str.split(",") if origin.strip()]
 
 # Set up CORS middleware to allow requests from the frontend
