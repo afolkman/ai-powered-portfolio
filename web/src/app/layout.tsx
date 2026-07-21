@@ -39,9 +39,9 @@ export default function RootLayout({
         <nav className={`${geistSans.variable} sticky top-0 z-50 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 p-4 flex justify-between items-center`}>
           {/* Logo / Name */}
           <div>
-            <a href="/" className="text-xl font-bold">
+            <Link href="/" className="text-xl font-bold">
               adam-folkman<span className="text-blue-600">.dev</span>
-            </a>
+            </Link>
           </div>
           {/* Navigation Links */}
           <div>
