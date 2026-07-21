@@ -34,6 +34,7 @@ export default function Home() {
       setReply(data.reply);
     } catch (error) {
       setReply("Error connecting to the backend. Is the server running?");
+      console.error(error);
     } finally {
       setIsLoading(false);
     }
@@ -45,11 +46,11 @@ export default function Home() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start w-full max-w-2xl md:max-w-6xl rounded-xl shadow-lg p-8">
         {/* LEFT SIDE: ABOUT ME */}
         <div id="about-me">
-          <h1 className="text-4xl font-bold mb-4">Hi, I'm Adam!</h1>
+          <h1 className="text-4xl font-bold mb-4">Hi, I&apos;m Adam!</h1>
           <h2 className="text-xl italic mb-6">Software Engineer & WGU Graduate</h2>
           <p>
             I am a full-stack developer with a background as a Business Analyst with experience in Python, 
-            Next.js, and integrating AI into practical applications. I'm passionate about building clean, 
+            Next.js, and integrating AI into practical applications. I&apos;m passionate about building clean, 
             scalable, enterprise-grade software.
           </p>
         </div>

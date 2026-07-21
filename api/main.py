@@ -28,19 +28,23 @@ allowed_origins_list = [origin.strip() for origin in allowed_origins_str.split("
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins_list,  # Adjust this if your frontend is hosted elsewhere
+    allow_origin_regex=os.getenv("ALLOWED_PREVIEW_ORIGINS"),  # Allow Vercel preview branch deployment
     allow_credentials=True,
-    allow_methods=["*"], # Allow all HTTP methods (GET, POST, etc.)
-    allow_headers=["*"], # Allow all headers
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allow all headers
 )
+
 
 # Define the data format we expect from the frontend
 class ChatRequest(BaseModel):
     message: str
 
+
 # Root endpoint to verify the server is running
 @app.get("/")
 async def root():
     return {"message": "Success! The FastAPI server is up and running."}
+
 
 # AI chat endpoint
 @app.post("/api/chat")
