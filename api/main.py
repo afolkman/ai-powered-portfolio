@@ -28,7 +28,7 @@ allowed_origins_list = [origin.strip() for origin in allowed_origins_str.split("
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins_list,  # Adjust this if your frontend is hosted elsewhere
-    allow_origin_regex=r"https://ai-powered-portfolio.*\.vercel\.app",  # Automatically matches any Vercel preview branch deployment
+    allow_origin_regex=r"https://ai-powered-portfolio.*\.vercel\.app",  # Allow Vercel preview branch deployment
     allow_credentials=True,
     allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
     allow_headers=["*"],  # Allow all headers
