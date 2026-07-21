@@ -8,6 +8,12 @@ export default function Home() {
   const [reply, setReply] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  // Get base URL from environment variable or fallback to localhost
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+  // Safely construct the full endpoint URL, handling trailing slashes automatically
+  const chatEndpoint = new URL("/api/chat", baseUrl).toString();
+
+
   const sendMessage = async () => {
     if (!input.trim()) return;
 
@@ -16,7 +22,7 @@ export default function Home() {
 
     try {
       // Send the POST request to the FastAPI backend
-      const response = await fetch("http://localhost:8000/api/chat", {
+      const response = await fetch(chatEndpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
