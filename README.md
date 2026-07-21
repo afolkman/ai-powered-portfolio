@@ -1,48 +1,147 @@
-## 📝 Commit Convention
+# AI-Powered Portfolio Monorepo
 
-This project adheres to the [Conventional Commits](https://www.conventionalcommits.org/) specification. This convention provides a set of simple rules for creating an explicit commit history, which makes it easier to write automated tools, generate changelogs, and keep our project history readable.
+This repository contains a full-stack portfolio application with an AI chat experience.
 
-### Commit Format
+- Frontend: Next.js + TypeScript + Tailwind CSS
+- Backend: FastAPI + Gemini API
+- Deployment model: decoupled frontend and backend services
 
-Each commit message should follow this structure:
+## Project Structure
+
+```text
+.
+├── api/        # FastAPI service powering the chat endpoint
+├── web/        # Next.js App Router frontend
+├── .github/    # CI workflows
+└── README.md   # Monorepo documentation
+```
+
+## Architecture
+
+The frontend sends user prompts to the backend endpoint.
+
+1. User enters a message in the web UI.
+2. Frontend sends a POST request to `/api/chat`.
+3. Backend forwards the message to Gemini.
+4. Backend returns the generated reply.
+5. Frontend renders the response with Markdown support.
+
+## Prerequisites
+
+- Node.js 20+
+- npm 10+
+- Python 3.12+
+
+## Local Development
+
+Run backend and frontend in separate terminals.
+
+### 1) Start the API
+
+```bash
+cd api
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
+
+### 2) Start the Web App
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+Open http://localhost:3000.
+
+## Environment Configuration
+
+### API (.env in api/)
+
+- `GEMINI_API_KEY`: Google Gemini API key
+- `ALLOWED_ORIGINS`: comma-separated explicit origins
+
+### Web (.env in web/)
+
+- `NEXT_PUBLIC_API_URL`: public base URL for backend API (example: `http://localhost:8000`)
+
+## Testing
+
+### API tests
+
+```bash
+cd api
+pytest -q
+```
+
+### Web lint
+
+```bash
+cd web
+npm run lint
+```
+
+## Deployment Notes
+
+- Deploy `web/` to Vercel.
+- Deploy `api/` to your Python hosting provider.
+- Ensure frontend domain(s) are included in backend CORS configuration.
+- Set `NEXT_PUBLIC_API_URL` to the deployed backend URL.
+
+## Commit Convention
+
+This project follows Conventional Commits.
+
+Format:
 
 ```text
 <type>(<scope>): <description>
 
 [optional body]
-
 ```
 
-### Commit Types
+Types used in this repository:
 
-We use the following types to categorize changes:
+- `feat`: user-facing feature
+- `fix`: bug fix
+- `docs`: documentation changes
+- `style`: formatting-only changes
+- `refactor`: internal code improvements without behavior changes
+- `chore`: maintenance and tooling updates
 
-* **`feat`**: A new feature for the user.
-* **`fix`**: A bug fix.
-* **`docs`**: Documentation only changes.
-* **`style`**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc).
-* **`refactor`**: A code change that neither fixes a bug nor adds a feature.
-* **`chore`**: Changes to the build process or auxiliary tools and libraries (e.g., updating dependencies, consolidating files).
-
-### Examples
-
-**Adding a new feature:**
+Examples:
 
 ```text
 feat(frontend): add authentication guard to user dashboard
-
-```
-
-**Fixing a bug:**
-
-```text
 fix(backend): resolve CORS issue in FastAPI endpoint
-
+chore(repo): consolidate .gitignore files to root level
 ```
 
-**Maintenance task:**
+## Branch Naming Convention
+
+Use short, descriptive branch names that include the type of work and scope.
+
+Recommended format:
 
 ```text
-chore(repo): consolidate .gitignore files to root level
-
+<type>/<scope>-<short-description>
 ```
+
+Examples:
+
+```text
+feat/frontend-chat-ui
+fix/backend-cors-preflight
+docs/repo-readme-updates
+refactor/api-error-handling
+chore/ci-workflow-cleanup
+```
+
+Guidelines:
+
+- Use lowercase letters.
+- Use hyphens (`-`) between words.
+- Keep names concise but specific.
+- Match `type` with Conventional Commit categories when possible.

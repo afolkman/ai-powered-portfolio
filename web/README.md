@@ -1,36 +1,78 @@
-Welcome to the client-side repository of my interactive developer portfolio. This frontend is built using Next.js (App Router), strictly typed with TypeScript, and styled using Tailwind CSS. It serves as the primary user interface, featuring a custom chat client designed to consume my Python/FastAPI microservice. By keeping this presentation layer completely decoupled from the backend AI logic, the application remains fast, scalable, and easy to maintain.
+# AI-Powered Portfolio Frontend
+
+This is the client application for the AI-powered portfolio, built with Next.js App Router, TypeScript, and Tailwind CSS.
+
+The frontend provides:
+
+- A personal portfolio presentation
+- A chat interface for AI-powered Q&A
+- Markdown-rendered responses from the backend service
+
+## Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript 5
+- Tailwind CSS 4
+- react-markdown
+
+## Prerequisites
+
+- Node.js 20+
+- npm 10+
+
+## Environment Variables
+
+Create a `.env` file in this directory:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:8000
+```
+
+- `NEXT_PUBLIC_API_URL` is the base URL for the backend API.
+- The app posts chat requests to `/api/chat` on this base URL.
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and start the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run start`: Start production server
+- `npm run lint`: Run ESLint
+
+## Project Layout
+
+```text
+src/
+└── app/
+	├── globals.css
+	├── layout.tsx
+	└── page.tsx
+```
+
+The main chat and portfolio UI is implemented in `src/app/page.tsx`.
+
+## Deployment
+
+This frontend is designed for Vercel deployment.
+
+Before deploying:
+
+1. Set `NEXT_PUBLIC_API_URL` to your deployed backend URL.
+2. Confirm backend CORS allows your Vercel domain and preview URLs.
 
 ## Learn More
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js docs: https://nextjs.org/docs
+- App Router docs: https://nextjs.org/docs/app
+- Vercel deployment docs: https://nextjs.org/docs/app/building-your-application/deploying
