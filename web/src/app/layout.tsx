@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Inter } from "next/font/google";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -45,10 +46,10 @@ export default function RootLayout({
           {/* Navigation Links */}
           <div>
             <ul className="flex gap-6">
-              <li><a href="/#about-me" className="hover:text-blue-400 dark:hover:text-blue-600 transition-colors duration-200">About Me</a></li>
-              <li><a href="https://www.linkedin.com/in/adamfolkman/" target="_blank" className="hover:text-blue-400 dark:hover:text-blue-600 transition-colors duration-200">Resumé</a></li>
-              <li><a href="/projects" className="hover:text-blue-400 dark:hover:text-blue-600 transition-colors duration-200">Portfolio</a></li>
-              <li><a href="https://github.com/afolkman" target="_blank" className="hover:text-blue-400 dark:hover:text-blue-600 transition-colors duration-200">GitHub</a></li>
+              <li><Link href="/#about-me" className="hover:text-blue-400 dark:hover:text-blue-600 transition-colors duration-200">About Me</Link></li>
+              <li><Link href="https://www.linkedin.com/in/adamfolkman/" target="_blank" className="hover:text-blue-400 dark:hover:text-blue-600 transition-colors duration-200">Resumé</Link></li>
+              <li><Link href="/projects" className="hover:text-blue-400 dark:hover:text-blue-600 transition-colors duration-200">Portfolio</Link></li>
+              <li><Link href="https://github.com/afolkman" target="_blank" className="hover:text-blue-400 dark:hover:text-blue-600 transition-colors duration-200">GitHub</Link></li>
             </ul>
           </div>
         </nav>
