@@ -16,14 +16,17 @@ client = genai.Client(api_key=api_key)
 
 # Initialize the FastAPI app
 app = FastAPI(
-    title="Portfolio AI Backend",
+    title="AI Portfolio API",
     description="FastAPI backend powering my AI chatbot."
 )
+
+allowed_origins_str = os.getenv("ALLOWED_ORIGINS", "")
+allowed_origins_list = [origin.strip() for origin in allowed_origins_str.split(",") if origin.strip()]
 
 # Set up CORS middleware to allow requests from the frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Adjust this if your frontend is hosted elsewhere
+    allow_origins=allowed_origins_list,  # Adjust this if your frontend is hosted elsewhere
     allow_credentials=True,
     allow_methods=["*"], # Allow all HTTP methods (GET, POST, etc.)
     allow_headers=["*"], # Allow all headers
