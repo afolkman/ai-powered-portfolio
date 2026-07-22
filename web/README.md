@@ -55,9 +55,9 @@ Open http://localhost:3000 in your browser.
 ```text
 src/
 └── app/
-	├── globals.css
-	├── layout.tsx
-	└── page.tsx
+  ├── globals.css
+  ├── layout.tsx
+  └── page.tsx
 ```
 
 The main chat and portfolio UI is implemented in `src/app/page.tsx`.
