@@ -93,7 +93,7 @@ Tests currently cover:
 
 ## Docker
 
-Build and run:
+Build and run (from the `api/` directory):
 
 ```bash
 docker build -t ai-portfolio-api .
